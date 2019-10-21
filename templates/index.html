@@ -1,0 +1,109 @@
+{% extends 'layout.html' %}
+{% block body %}
+<div class='container col-10'>
+<div class='jumbotron col-12'>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100" src="{{url_for('static', filename='jokerimaxheader.jpg')}}" alt="First slide" width="1100" height="500">
+            <div class="carousel-caption d-none d-md-block">
+              <h2 class='xx-large'>{{movies[0]}}</h2>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="{{cards[1]}}" alt="Second slide" width="1100" height="500">
+            <div class="carousel-caption d-none d-md-block">
+                <h2 class='xx-large'>{{movies[1]}}</h2>
+              </div>
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="{{cards[3]}}" alt="Third slide" width="1100" height="500">
+            <div class="carousel-caption d-none d-md-block">
+                <h2 class='xx-large'>{{movies[3]}}</h2>
+              </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+</div>
+</div>
+</div>
+<div class="card-deck">
+        <div class="card">
+          <img class="card-img-top" src="{{cards[0]}}" alt="Card image cap">
+          <div class="card-body d-inline-flex flex row">
+            <h5 class="card-title">{{movies[0]}}</h5>
+            <p class="card-text">{{overview[0]}}</p>
+            <button type="button" class="btn btn-dark mt-auto" data-toggle="modal" data-target="#exampleModal" data-whatever="{{movies[0]}}" data-foo={{link[0]}} data-vote={{rating[0]}} data-pop={{popularity[0]}}>Ver detalles</button>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img-top" src="{{cards[1]}}" alt="Card image cap">
+          <div class="card-body d-inline-flex flex row">
+            <h5 class="card-title">{{movies[1]}}</h5>
+            <p class="card-text">{{overview[1]}}</p>
+            <button type="button" class="btn btn-dark mt-auto" data-toggle="modal" data-target="#exampleModal" data-whatever="{{movies[1]}}" data-foo={{link[1]}} data-vote={{rating[1]}} data-pop={{popularity[1]}}>Ver detalles</button>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img-top" src="{{cards[2]}}" alt="Card image cap">
+          <div class="card-body d-inline-flex flex row">
+            <h5 class="card-title">{{movies[2]}}</h5>
+            <p class="card-text">{{overview[2]}}</p>
+            <button type="button" class="btn btn-dark mt-auto" data-toggle="modal" data-target="#exampleModal" data-whatever="{{movies[2]}}" data-foo={{link[2]}} data-vote={{rating[2]}} data-pop={{popularity[2]}}>Ver detalles</button>
+          </div>
+        </div>
+        <div class="card">
+                <img class="card-img-top" src="{{cards[3]}}" alt="Card image cap">
+                <div class="card-body d-inline-flex flex row">
+                  <h5 class="card-title">{{movies[3]}}</h5>
+                  <p class="card-text">{{overview[3]}}</p>
+                  <button type="button" class="btn btn-dark mt-auto" data-toggle="modal" data-target="#exampleModal" data-whatever="{{movies[3][0:9]}}" data-foo={{link[3]}} data-vote={{rating[3]}} data-pop={{popularity[3]}}>Ver detalles</button>
+                </div>
+              </div>
+        <div class="card">
+            <img class="card-img-top" src="{{cards[4]}}" alt="Card image cap">
+                <div class="card-body d-inline-flex flex row">
+                    <h5 class="card-title">{{movies[4]}}</h5>
+                    <p class="card-text">{{overview[4]}}</p>
+                    <button type="button" class="btn btn-dark mt-auto" data-toggle="modal" data-target="#exampleModal" data-whatever="{{movies[4]}}" data-foo='{{link[4]}}' data-vote={{rating[4]}} data-pop={{popularity[4]}}>Ver detalles</button>
+                </div>
+            </div>
+      </div>
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+            <img src='{{link}}' class='img-thumbnail' style="float:left" width='200' height='300'>
+            <h3 class="display-3 text-center" id="title">Movie Title</h3>
+            <p class='text-center'>Short Movie description</p>
+            <h4 class='text-center'>Rating: 7.5</h4>
+            </div>
+            
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary"><i class="far fa-thumbs-up"></i> Like</button>
+              <button type="button" class="btn btn-danger"><i class="far fa-thumbs-down"></i> Dislike</button>
+            </div>
+          </div>
+        </div>
+      </div>
+{% endblock %}
