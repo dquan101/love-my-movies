@@ -29,6 +29,7 @@ for i in range(5):
         popularity.append('Medium')    
 environment = os.getenv("ENVIRONMENT", "development")
 
+
 @app.route("/")
 def home():
     return render_template("index.html", movies=top5_titles, link=links, cards=card_img, overview=overview, rating=db_rating, popularity=popularity)
