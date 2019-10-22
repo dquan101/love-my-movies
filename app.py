@@ -2,10 +2,8 @@
 from flask import Flask, jsonify, render_template, request
 import os, json
 import requests
-from redis import Redis
 
 app =  Flask(__name__)
-r = Redis(host='localhost', port=6379)
 raw_movies = requests.get('https://api.themoviedb.org/3/movie/popular?api_key=67a0d10d9636749b85787f06a4e26ec3&language=en-US&page=1')
 json_movies = raw_movies.json()
 
