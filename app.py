@@ -32,5 +32,5 @@ def home():
     return render_template("index.html", movies=top5_titles, link=links, cards=card_img, overview=overview, rating=db_rating, popularity=popularity)
 
 if __name__ == "__main__":
-    debug=True
+    debug=False
     app.run(host="0.0.0.0", debug=debug)
