@@ -1,4 +1,5 @@
 import requests
+import app
 
 
 def test_get():
@@ -7,5 +8,3 @@ def test_get():
     except:
         r = 500
     assert r == 200
-
-test_get()
