@@ -27,7 +27,6 @@ for i in range(5):
         popularity.append('High')
     else:
         popularity.append('Medium')    
-environment = os.getenv("ENVIRONMENT", "development")
 
 
 @app.route("/")
@@ -36,6 +35,4 @@ def home():
 
 if __name__ == "__main__":
     debug=True
-    if environment == 'development':
-        debug = True
     app.run(host="0.0.0.0", debug=debug)
